@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Depósito de Madeiras Mato Grosso - Notinhas</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        label { display: block; margin-top: 15px; }
+        input { padding: 8px; width: 100%; max-width: 400px; }
+        button { margin-top: 20px; padding: 10px 20px; cursor: pointer; }
+        .nota { margin-top: 30px; padding: 20px; border: 1px solid #000; width: 350px; }
+        .linha { display: flex; justify-content: space-between; }
+    </style>
+</head>
+<body>
+
+<h1>Depósito de Madeiras Mato Grosso</h1>
+
+<label>Endereço (editável):</label>
+<input id="endereco" value="Rua Exemplo 123 - Cidade/UF">
+
+<label>Produto:</label>
+<input id="produto">
+
+<label>Preço:</label>
+<input id="preco">
+
+<button onclick="gerar()">Gerar Notinha</button>
+
+<div class="nota" id="nota" style="display:none;">
+    <h3>Notinha</h3>
+    <p><b>Endereço:</b> <span id="nEndereco"></span></p>
+    <div class="linha">
+        <span id="nProduto"></span>
+        <span id="nPreco"></span>
+    </div>
+</div>
+
+<script>
+function gerar() {
+    document.getElementById('nota').style.display = 'block';
+    document.getElementById('nEndereco').innerText = document.getElementById('endereco').value;
+    document.getElementById('nProduto').innerText = document.getElementById('produto').value;
+    document.getElementById('nPreco').innerText = document.getElementById('preco').value;
+}
+</script>
+
+</body>
+</html>
